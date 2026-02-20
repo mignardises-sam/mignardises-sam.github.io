@@ -1,0 +1,934 @@
+/* ============================================
+   Variables CSS
+============================================ */
+:root {
+  --magenta: #E91E8C;
+  --dark-gray: #5A5A5A;
+  --light-gray: #F5F5F5;
+  --cream: #FFF8F3;
+  --white: #FFFFFF;
+  --gold: #D4AF37;
+  --soft-pink: #FFE8F0;
+  --text-dark: #2C2C2C;
+  --banner-height: 46px;
+  --nav-height: 110px;
+}
+
+/* ============================================
+   Reset et Base
+============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  padding-top: calc(var(--banner-height) + var(--nav-height));
+}
+
+/* ============================================
+   WhatsApp Order Button
+============================================ */
+.whatsapp-order-btn {
+  width: 100%;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.whatsapp-order-btn:hover {
+  background: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, .4);
+}
+
+/* ============================================
+   BANNIÈRE STICKY RAMADAN
+============================================ */
+.ramadan-sticky-banner {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: var(--banner-height);
+  background: linear-gradient(135deg, #1a0533 0%, #4a0e6e 50%, #1a0533 100%);
+  color: #fff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 15px rgba(74, 14, 110, .5);
+  border-bottom: 2px solid var(--gold);
+}
+.ramadan-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.ramadan-moon {
+  font-size: 1.3rem;
+  animation: moonGlow 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes moonGlow {
+  0%, 100% { filter: drop-shadow(0 0 5px var(--gold)); }
+  50%       { filter: drop-shadow(0 0 15px var(--gold)); }
+}
+.ramadan-text {
+  font-size: .9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ramadan-banner-btn {
+  background: var(--gold);
+  color: #1a0533;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: .82rem;
+  transition: all .3s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ramadan-banner-btn:hover { background: #fff; transform: scale(1.05); }
+.ramadan-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, .6);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin-left: auto;
+  transition: color .2s;
+  flex-shrink: 0;
+}
+.ramadan-close-btn:hover { color: #fff; }
+
+/* ============================================
+   Navigation
+============================================ */
+nav {
+  position: fixed;
+  top: var(--banner-height);
+  width: 100%;
+  background: rgba(255, 255, 255, .98);
+  backdrop-filter: blur(10px);
+  z-index: 998;
+  padding: .5rem 2%;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, .08);
+  transition: top .3s ease;
+}
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-section { display: flex; align-items: center; gap: 1rem; }
+.logo-img { width: 100px; height: 100px; object-fit: contain; }
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark-gray);
+}
+.brand-tagline {
+  font-size: .75rem;
+  color: var(--magenta);
+  font-style: italic;
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-weight: 500;
+  font-size: .95rem;
+  transition: color .3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0;
+  width: 0; height: 2px;
+  background: var(--magenta);
+  transition: width .3s ease;
+}
+.nav-links a:hover { color: var(--magenta); }
+.nav-links a:hover::after { width: 100%; }
+.whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+  padding: .7rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  transition: all .3s ease;
+}
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, .3);
+}
+
+/* ============================================
+   Hero Section
+============================================ */
+.hero {
+  padding: 4rem 5% 5rem;
+  background: linear-gradient(135deg, var(--soft-pink) 0%, var(--cream) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Citation Maya Angelou */
+.hero-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: .9rem;
+  font-style: italic;
+  color: var(--magenta);
+  opacity: .85;
+  margin-bottom: 1.2rem;
+  display: block;
+  letter-spacing: .3px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.hero-text .highlight { color: var(--magenta); }
+
+.hero-subtitle {
+  font-size: .95rem;
+  color: var(--dark-gray);
+  margin-bottom: 2rem;
+  line-height: 1.9;
+}
+
+/* Sous-titre poétique (catégories) */
+.hero-categories {
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--dark-gray);
+  opacity: .75;
+  margin-bottom: 1.8rem;
+  line-height: 1.8;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.badge {
+  background: #fff;
+  padding: .4rem .8rem;
+  border-radius: 30px;
+  font-size: .85rem;
+  color: var(--dark-gray);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.badge-icon { color: var(--magenta); font-size: 1.1rem; }
+
+.hero-image {
+  position: relative;
+  height: 600px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .1);
+}
+.hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ============================================
+   Section Title (générique)
+============================================ */
+.section-title { text-align: center; margin-bottom: 2rem; }
+.section-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--magenta);
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-gray);
+  margin-bottom: .5rem;
+}
+.section-description {
+  font-size: .8rem;
+  color: var(--dark-gray);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ============================================
+   SECTION RAMADAN (fond + cards)
+============================================ */
+.ramadan-section {
+  background: linear-gradient(160deg, #0d0221 0%, #2d0b5e 40%, #1a0533 100%);
+  padding: 5rem 5%;
+  position: relative;
+  overflow: hidden;
+}
+.ramadan-section::before {
+  content: "🌙";
+  position: absolute;
+  font-size: 22rem;
+  opacity: .04;
+  top: -60px; right: -60px;
+  pointer-events: none;
+}
+.ramadan-header { text-align: center; margin-bottom: 3.5rem; }
+.ramadan-header .section-number {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: .85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+.ramadan-header .section-heading {
+  color: #fff;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.ramadan-header .section-description {
+  color: rgba(255, 255, 255, .75);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grille cards */
+.ramadan-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Card */
+.ramadan-card {
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 215, 0, .25);
+  border-radius: 20px;
+  padding: 1.6rem 1.6rem 1.8rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.ramadan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  border-color: var(--gold);
+}
+
+/* Card featured */
+.ramadan-card-featured {
+  border-color: var(--gold);
+  border-width: 2px;
+  background: rgba(255, 160, 0, .18);
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(212, 175, 55, .2);
+}
+.ramadan-card-featured:hover { transform: scale(1.03) translateY(-8px); }
+
+/* Badge */
+.ramadan-card-badge {
+  position: absolute;
+  top: -13px; left: 50%;
+  transform: translateX(-50%);
+  background: #4a0e6e;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-size: .75rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+  z-index: 2;
+}
+.ramadan-badge-star { background: var(--gold); color: #1a0533; border: none; }
+
+/* Image */
+.ramadan-card-img {
+  width: 100%;
+  height: 280px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 1rem 0 1.2rem;
+  background: rgba(255, 255, 255, .10);
+}
+.ramadan-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .3s ease;
+}
+.ramadan-card:hover .ramadan-card-img img { transform: scale(1.05); }
+
+/* Contenu */
+.ramadan-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: .6rem;
+  color: var(--gold);
+}
+.ramadan-card p {
+  color: rgba(255, 255, 255, .85);
+  font-size: .9rem;
+  line-height: 1.6;
+  margin-bottom: .8rem;
+  flex-grow: 1;
+}
+.ramadan-price {
+  font-size: .95rem;
+  color: rgba(255, 255, 255, .75);
+  margin-bottom: 1rem;
+}
+.ramadan-price strong { color: var(--gold); font-size: 1.15rem; }
+
+.ramadan-card .whatsapp-order-btn { margin-top: auto; flex-shrink: 0; }
+
+.ramadan-note {
+  text-align: center;
+  color: rgba(255, 255, 255, .75);
+  margin: 3rem auto 0;
+  font-size: .95rem;
+  line-height: 1.8;
+  max-width: 700px;
+  padding: 1.5rem;
+  border: 1px dashed rgba(255, 215, 0, .4);
+  border-radius: 12px;
+}
+
+/* ============================================
+   Pâtisserie Section
+============================================ */
+.patisserie-section {
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.category-section { margin-bottom: 3rem; }
+.category-header {
+  background: linear-gradient(135deg, var(--magenta) 0%, #C91475 100%);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 40px rgba(233, 30, 140, .2);
+}
+.category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.category-subtitle { font-size: .8rem; opacity: .95; }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+  transition: all .3s ease;
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 50px rgba(233, 30, 140, .15);
+}
+.product-image {
+  width: 100%;
+  height: 380px;
+  background: var(--light-gray);
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.product-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+.product-image:hover img { transform: scale(1.1); }
+.zoom-icon {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: rgba(233, 30, 140, .9);
+  color: #fff;
+  width: 35px; height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.product-image:hover .zoom-icon { opacity: 1; }
+.product-info { padding: 1.2rem; }
+.product-ref {
+  display: inline-block;
+  background: var(--light-gray);
+  color: var(--dark-gray);
+  padding: .3rem .8rem;
+  border-radius: 5px;
+  font-size: .75rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  letter-spacing: .5px;
+}
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+  margin-bottom: .8rem;
+}
+.product-pricing {
+  background: var(--light-gray);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+.price-label { font-size: .8rem; color: var(--dark-gray); margin-bottom: .3rem; }
+.price {
+  color: var(--magenta);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+}
+.min-qty { font-size: .85rem; color: var(--dark-gray); font-style: italic; }
+
+/* ============================================
+   Birthday Cakes Section
+============================================ */
+.birthday-section {
+  padding: 3rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, var(--white) 0%, var(--soft-pink) 100%);
+}
+.birthday-header { background: linear-gradient(135deg, #FF6B9D 0%, var(--magenta) 100%); }
+.birthday-header-adult { background: linear-gradient(135deg, var(--gold) 0%, #B8860B 100%); }
+.birthday-header-theme { background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%); }
+.birthday-badge {
+  position: absolute;
+  top: 15px; left: 15px;
+  background: rgba(255, 107, 157, .95);
+  color: #fff;
+  padding: .4rem 1rem;
+  border-radius: 20px;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  z-index: 10;
+}
+.adult-badge { background: rgba(212, 175, 55, .95); }
+.theme-badge { background: rgba(156, 39, 176, .95); }
+.birthday-info {
+  background: #fff;
+  border-radius: 20px;
+  padding: 3rem;
+  margin-top: 4rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .08);
+}
+.birthday-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--magenta);
+  margin-bottom: 1.5rem;
+}
+.birthday-info p {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+.birthday-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+.birthday-info li {
+  font-size: 1rem;
+  color: var(--dark-gray);
+  border-left: 3px solid var(--magenta);
+  padding: .8rem .8rem .8rem 1.5rem;
+  margin-bottom: .8rem;
+  background: var(--light-gray);
+  border-radius: 5px;
+}
+.birthday-note {
+  background: var(--soft-pink);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+/* ============================================
+   Traiteur Section
+============================================ */
+.traiteur-section {
+  padding: 2rem 5%;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--soft-pink) 100%);
+}
+.traiteur-container { max-width: 1400px; margin: 0 auto; }
+.menu-composition {
+  background: #fff;
+  border-radius: 20px;
+  padding: 4rem;
+  margin-bottom: 5rem;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, .08);
+}
+.composition-header { text-align: center; margin-bottom: 3rem; }
+.composition-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+}
+.menu-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+.menu-type {
+  background: var(--light-gray);
+  padding: 2.5rem;
+  border-radius: 15px;
+  border-left: 5px solid var(--magenta);
+}
+.menu-type-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--magenta);
+  margin-bottom: 1.5rem;
+}
+.menu-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+}
+.menu-price-unit { font-size: .9rem; font-weight: 400; color: var(--dark-gray); }
+.menu-includes { margin-top: 1.5rem; }
+.menu-includes h4 { font-size: 1rem; font-weight: 600; color: var(--dark-gray); margin-bottom: .8rem; }
+.menu-includes ul { list-style: none; padding-left: 0; }
+.menu-includes li {
+  padding: .4rem 0;
+  color: var(--dark-gray);
+  font-size: .95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+}
+.menu-includes li::before { content: '✓'; color: var(--magenta); font-weight: 700; flex-shrink: 0; }
+
+/* ============================================
+   Detailed Menu
+============================================ */
+.detailed-menu { margin-top: 5rem; }
+.menu-category {
+  background: #fff;
+  border-radius: 15px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .06);
+}
+.menu-category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--magenta);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--soft-pink);
+}
+.menu-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.menu-item {
+  background: var(--light-gray);
+  padding: 1.2rem;
+  border-radius: 10px;
+  font-size: .95rem;
+  color: var(--dark-gray);
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  transition: all .3s ease;
+}
+.menu-item:hover { background: var(--soft-pink); transform: translateX(5px); }
+.menu-item::before { content: '🍽️'; font-size: 1.2rem; }
+
+/* ============================================
+   Media Gallery
+============================================ */
+.media-gallery {
+  padding: 8rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.gallery-item {
+  position: relative;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, .15);
+}
+.gallery-item img,
+.gallery-item video { width: 100%; height: 100%; object-fit: cover; }
+
+/* ============================================
+   Footer
+============================================ */
+footer {
+  background: var(--dark-gray);
+  color: #fff;
+  padding: 4rem 5% 2rem;
+}
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+.footer-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--magenta);
+}
+.footer-section p,
+.footer-section a {
+  color: rgba(255, 255, 255, .8);
+  text-decoration: none;
+  display: block;
+  margin-bottom: .8rem;
+  transition: color .3s ease;
+}
+.footer-section a:hover { color: var(--magenta); }
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  color: rgba(255, 255, 255, .6);
+}
+
+/* ============================================
+   Image Zoom Modal
+============================================ */
+.zoom-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, .95);
+}
+.zoom-modal.active { display: block; }
+.zoom-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: move;
+}
+.zoom-close {
+  position: absolute;
+  top: 30px; right: 50px;
+  color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  transition: .3s;
+  cursor: pointer;
+  z-index: 10001;
+}
+.zoom-close:hover,
+.zoom-close:focus { color: var(--magenta); }
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+  .products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --banner-height: 40px;
+    --nav-height: 90px;
+  }
+
+  .ramadan-banner-content { gap: 8px; }
+  .ramadan-text { font-size: .75rem; }
+  .ramadan-banner-btn { font-size: .75rem; padding: 4px 10px; }
+
+  nav { padding: .5rem 3%; }
+  .logo-img { width: 70px; height: 70px; }
+  .brand-name { font-size: 1rem; }
+  .brand-tagline { font-size: .65rem; }
+  .nav-links { display: none; }
+  .whatsapp-btn { padding: .5rem 1rem; font-size: .85rem; }
+
+  .hero { padding: 2rem 4%; }
+  .hero-content { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-text h1 { font-size: 1.8rem; line-height: 1.1; }
+  .hero-subtitle { font-size: .9rem; margin-bottom: 1rem; }
+  .hero-badges { gap: .5rem; }
+  .hero-image { height: 220px; }
+
+  .section-heading { font-size: 1.6rem; }
+  .section-description { font-size: .85rem; }
+
+  .ramadan-section { padding: 3rem 4%; }
+  .ramadan-header .section-heading { font-size: 2rem; }
+  .ramadan-cards { grid-template-columns: 1fr; }
+  .ramadan-card { height: auto; }
+  .ramadan-card-featured { transform: scale(1); }
+  .ramadan-card-featured:hover { transform: translateY(-8px); }
+  .ramadan-card-img { height: 240px; }
+
+  .patisserie-section,
+  .birthday-section { padding: 1.5rem 4%; }
+  .category-header { padding: 1rem; }
+  .products-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .product-image { height: 280px; }
+  .product-info { padding: .8rem; }
+  .product-name { font-size: 1.1rem; }
+  .price { font-size: 1.1rem; }
+
+  .birthday-info { padding: 1.5rem 1rem; margin-top: 2rem; }
+  .birthday-info h3 { font-size: 1.4rem; }
+
+  .traiteur-section { padding: 1.5rem 4%; }
+  .menu-composition { padding: 1.5rem 1rem; margin-bottom: 2rem; }
+  .menu-types { grid-template-columns: 1fr; gap: 1.5rem; }
+  .menu-type { padding: 1.2rem; }
+  .menu-category { padding: 1.5rem 1rem; margin-bottom: 1.5rem; }
+  .menu-items-grid { grid-template-columns: 1fr; gap: .8rem; }
+
+  .media-gallery { padding: 2rem 4%; }
+  .gallery-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .gallery-item { height: 220px; }
+
+  footer { padding: 2rem 4% 1rem; }
+  .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  .zoom-close { top: 15px; right: 15px; font-size: 35px; }
+  .zoom-content { max-width: 95%; max-height: 80%; }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 { font-size: 1.7rem; }
+  .section-heading { font-size: 1.5rem; }
+  .logo-section { gap: .5rem; }
+  .brand-name { font-size: .9rem; }
+  .whatsapp-btn span { display: none; }
+  .whatsapp-btn { padding: .6rem 1.2rem; }
+  .ramadan-text { display: none; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .product-card:hover { transform: none; }
+  .product-image:hover img { transform: none; }
+  .zoom-icon { opacity: 1; }
+  .whatsapp-order-btn { padding: 1.2rem; font-size: 1.1rem; }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero { padding: 2rem 5%; }
+  .hero-image { height: 200px; }
+  .product-image { height: 250px; }
+}
